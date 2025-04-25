@@ -2,10 +2,11 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
+a
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
 To start Metro, run the following command from the _root_ of your React Native project:
@@ -77,3 +78,51 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+  🛠 Step 3: Modify or Extend the App
+  The main logic resides in:
+
+HomeScreen.tsx: Displays the course list
+
+DetailScreen.tsx: Shows selected course details
+
+features/api/apiSlice.ts: RTK Query API setup
+
+utils/filters.ts: Filtering and sorting utilities
+
+storage/favorites.ts: AsyncStorage logic for favorites
+
+You can easily modify:
+
+Filters (by title, keywords)
+
+Sort options (alphabetical, date, etc.)
+
+Layout and styling
+
+🔧 Advanced Setup
+To create signed APKs for distribution: Generating Signed APK
+
+To split APKs by architecture (arm64-v8a, armeabi-v7a, etc.), enable ABI splits in android/app/build.gradle
+
+gradle
+Copy
+Edit
+splits {
+abi {
+enable true
+reset()
+include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+universalApk false
+}
+}
+🐛 Troubleshooting
+If something doesn’t work, check out the official Troubleshooting Guide.
+
+📘 Learn More
+RTK Query – for efficient data fetching
+
+AsyncStorage – for local data persistence
+
+React Navigation – for seamless navigation
+
+JSONPlaceholder – mock API used in this project
